@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+                      name="${artifactId}"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <requiredProperties>
+<!--    <requiredProperty key="system"/>-->
+<!--    <requiredProperty key="module"/>-->
+<!--    <requiredProperty key="submodule"/>-->
+    <requiredProperty key="groupId">
+      <defaultValue>
+        com.lxt
+      </defaultValue>
+      <validationRegex>
+        ^[a-z0-9]+(\.[a-z0-9]+)*$
+      </validationRegex>
+    </requiredProperty>
+
+    <requiredProperty key="artifactId">
+        <defaultValue>
+            build
+        </defaultValue>
+    </requiredProperty>
+
+    <requiredProperty key="parentArtifactId">
+    </requiredProperty>
+
+    <requiredProperty key="package">
+      <defaultValue>
+        com.lxt
+      </defaultValue>
+      <validationRegex>
+        ^[a-z0-9]+(\.[a-z0-9]+)*$
+      </validationRegex>
+    </requiredProperty>
+
+    <requiredProperty key="version">
+      <defaultValue>
+        1.0.0-SNAPSHOT
+      </defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>install</directory>
+          <includes>
+            <include>**/*.cfg</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>distribution.type</include>
+            <include>README.md</include>
+            <include>node.cfg</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+</archetype-descriptor>

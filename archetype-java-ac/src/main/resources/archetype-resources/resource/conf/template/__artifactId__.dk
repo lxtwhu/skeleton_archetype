@@ -1,0 +1,18 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+{
+        "name":"${artifactId}",
+        "java.option":"-Xms256M -Xmx256M -server -XX:+UseParallelGC -XX:+UseParallelOldGC -XX:ParallelGCThreads=2 -XX:PermSize=64m -XX:MaxPermSize=128m",
+        "heartbeat.sec":"1",
+        "job.type":"java",
+        "job.idle.sec":"60",
+        "job.max.auto.restart.count":"0",
+        "job.classpath":"@{MODULE_DEPLOY_HOME}/conf:@{MODULE_DEPLOY_HOME}/lib/*",
+        "job.class":"${package}.demo.HelloMain",
+        "job.method.stop":"stop",
+        "job.method.start":"start",
+        "job.method.audit":"audit",
+        "job.method.check":"check",
+        "job.method.isSuicide":"isSuicide"
+}

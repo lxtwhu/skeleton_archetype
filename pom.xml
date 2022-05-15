@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.lxt</groupId>
+  <artifactId>skeleton_archetype</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Skeleton Archetype Collections</name>
+  <description>skeleton archetype projects pom</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>3.0.1</version>
+      </extension>
+    </extensions>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>3.0.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <addDefaultExcludes>false</addDefaultExcludes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+
+  <distributionManagement>
+    <repository>
+      <id>release</id>
+      <name>release</name>
+      <url>http://nexus.lxt.com:8080/nexus/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>lxt-snapshots</id>
+      <name>snapshot</name>
+      <url>http://nexus.lxt.com:8080/nexus/repository/maven-snapshots/</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <modules>
+    <module>archetype-parent</module>
+    <module>archetype-java-ac</module>
+    <module>archetype-java-static</module>
+    <module>archetype-java-upjas</module>
+    <module>archetype-resource-static</module>
+    <module>archetype-resource-no-setup</module>
+    <module>archetype-fat-jar-no-setup</module>
+    <module>archetype-local-component</module>
+    <module>archetype-lxk-app</module>
+    <module>archetype-build</module>
+  </modules>
+</project>
